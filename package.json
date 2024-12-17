@@ -1,0 +1,31 @@
+{
+  "title": "Blog API",
+  "name": "blogapi",
+  "version": "1.0.0",
+  "description": "Blog Management System",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon",
+    "debug": "DEBUG=* nodemon",
+    "dev": "node swaggerAutogen && nodemon index.js"
+  },
+  "keywords": [],
+  "author": "ayseugurlu",
+  "license": "ISC Licence",
+  "dependencies": {
+    "cookie-session": "^2.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.8.3",
+    "mongoose-unique-validator": "^4.0.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.16",
+    "redoc-express": "^2.1.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
