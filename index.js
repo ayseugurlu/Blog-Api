@@ -1,8 +1,6 @@
 "use strict";
 
-/*-------------------------------------
- FULL STACK | NODEJS/Express | BLOGAPI 
- --------------------------------------*/
+//&FULL STACK | NODEJS/Express | BLOGAPI
 
 const express = require("express");
 const app = express();
@@ -25,7 +23,7 @@ dbConnection();
 
 // CORS:
 const cors = require("cors");
-// app.use(cors({ origin: 'http://localhost:5173' }))
+app.use(cors({ origin: "http://localhost:8000" }));
 
 //* Middlewares:
 
@@ -36,13 +34,13 @@ app.use(express.json());
 app.use("/upload", express.static("./upload"));
 
 // Check Authentication:
-// app.use(require("./src/middlewares/authentication"));
+app.use(require("./src/middlewares/authentication"));
 
 // Run Logger:
 app.use(require("./src/middlewares/logger"));
 
 // res.getModelList():
-// app.use(require("./src/middlewares/queryHandler"));
+app.use(require("./src/middlewares/queryHandler"));
 
 //* Routes:
 

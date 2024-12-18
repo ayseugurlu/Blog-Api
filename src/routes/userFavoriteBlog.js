@@ -11,17 +11,14 @@ const permissions = require("../middlewares/permissions");
 
 // URL: /categories
 
-router
-  .route("/")
-  .get(permissions.isStaff, userFavoriteBlog.list)
-  .post(permissions.isAdmin, userFavoriteBlog.create);
+router.route("/").get(userFavoriteBlog.list).post(userFavoriteBlog.create);
 
 router
   .route("/:id")
-  .get(permissions.isStaff, userFavoriteBlog.read)
-  .put(permissions.isAdmin, userFavoriteBlog.update)
-  .patch(permissions.isAdmin, userFavoriteBlog.update)
-  .delete(permissions.isAdmin, userFavoriteBlog.delete);
+  .get(userFavoriteBlog.read)
+  .put(userFavoriteBlog.update)
+  .patch(userFavoriteBlog.update)
+  .delete(userFavoriteBlog.delete);
 
 /* ------------------------------------------------------- */
 // Exports:

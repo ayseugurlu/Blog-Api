@@ -11,17 +11,14 @@ const permissions = require("../middlewares/permissions");
 
 // URL: /comments
 
-router
-  .route("/")
-  .get(permissions.isStaff, comment.list)
-  .post(permissions.isAdmin, comment.create);
+router.route("/").get(comment.list).post(comment.create);
 
 router
   .route("/:id")
-  .get(permissions.isStaff, comment.read)
-  .put(permissions.isAdmin, comment.update)
-  .patch(permissions.isAdmin, comment.update)
-  .delete(permissions.isAdmin, comment.delete);
+  .get(comment.read)
+  .put(comment.update)
+  .patch(comment.update)
+  .delete(comment.delete);
 
 /* ------------------------------------------------------- */
 // Exports:

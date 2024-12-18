@@ -9,17 +9,14 @@ const permissions = require("../middlewares/permissions");
 
 // URL: /categories
 
-router
-  .route("/")
-  .get(permissions.isStaff, token.list)
-  .post(permissions.isAdmin, token.create);
+router.route("/").get(token.list).post(token.create);
 
 router
   .route("/:id")
-  .get(permissions.isStaff, token.read)
-  .put(permissions.isAdmin, token.update)
-  .patch(permissions.isAdmin, token.update)
-  .delete(permissions.isAdmin, token.delete);
+  .get(token.read)
+  .put(token.update)
+  .patch(token.update)
+  .delete(token.delete);
 
 /* ------------------------------------------------------- */
 // Exports:

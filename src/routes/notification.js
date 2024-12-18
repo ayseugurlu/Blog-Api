@@ -9,17 +9,14 @@ const permissions = require("../middlewares/permissions");
 
 // URL: /notifications
 
-router
-  .route("/")
-  .get(permissions.isStaff, notification.list)
-  .post(permissions.isAdmin, notification.create);
+router.route("/").get(notification.list).post(notification.create);
 
 router
   .route("/:id")
-  .get(permissions.isStaff, notification.read)
-  .put(permissions.isAdmin, notification.update)
-  .patch(permissions.isAdmin, notification.update)
-  .delete(permissions.isAdmin, notification.delete);
+  .get(notification.read)
+  .put(notification.update)
+  .patch(notification.update)
+  .delete(notification.delete);
 
 /* ------------------------------------------------------- */
 // Exports:
